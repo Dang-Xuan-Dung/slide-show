@@ -9,18 +9,18 @@ function makeSlideShow(slider) {
   const sliderItemWidth = sliderItems[0].offsetWidth;
   const sliderLength = sliderItems.length;
   const DIRECTION = {
-    next : 'next',
-    previous : 'previous'
+    NEXT : 'next',
+    PREVIOUS : 'previous'
   }
   let positionX = 0;
   let index = 0;
 
   nextBtn.addEventListener("click", function () {
-    handleChangeSlide(DIRECTION.next);
+    handleChangeSlide(DIRECTION.NEXT);
   });
 
   preBtn.addEventListener("click", function () {
-    handleChangeSlide(DIRECTION.previous);
+    handleChangeSlide(DIRECTION.PREVIOUS);
   });
 
   dotItems.forEach((item) =>
@@ -37,7 +37,7 @@ function makeSlideShow(slider) {
   );
 
   function handleChangeSlide(direction) {
-    if (direction === DIRECTION.next ) {
+    if (direction === DIRECTION.NEXT ) {
       if (index === sliderLength - 1) {
         positionX = sliderItemWidth;
       }
@@ -66,6 +66,6 @@ function makeSlideShow(slider) {
   }
 
   var autoPlayInterval = setInterval(function () {
-    handleChangeSlide(DIRECTION.next);
-  }, 3000);
+    handleChangeSlide(DIRECTION.NEXT);
+  }, 5000);
 }
